@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#13051e" />
+  <title>For Tapasya — 03.11</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --ink:#fff7fb; --pink:#ff80c5; --violet:#9567ff; --gold:#ffd379; --night:#13051e; --deep:#220b35; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--night); font-family:'Plus Jakarta Sans',sans-serif; overflow-x:hidden; }
+    body::before { content:''; position:fixed; inset:0; pointer-events:none; z-index:5; opacity:.16; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E"); }
+    .aurora { position:fixed; width:55vw; aspect-ratio:1; border-radius:50%; filter:blur(75px); opacity:.35; pointer-events:none; animation:drift 14s ease-in-out infinite alternate; }
+    .a1 { background:#b32781; left:-22vw; top:-20vw; } .a2 { background:#4631c2; right:-22vw; top:28vh; animation-delay:-8s; } .a3 { background:#be7631; left:20vw; bottom:-38vw; animation-delay:-5s; }
+    @keyframes drift { to { transform:translate(12vw,9vh) scale(1.18); } }
+    .scene { min-height:100svh; display:flex; flex-direction:column; justify-content:center; position:relative; padding:32px max(7vw,24px); isolation:isolate; }
+    .eyebrow { margin:0 0 22px; color:#ffc5e5; font:500 11px/1.3 'DM Mono',monospace; letter-spacing:.22em; text-transform:uppercase; }
+    #intro { text-align:center; align-items:center; }
+    .date-chip { display:inline-flex; align-items:center; gap:9px; padding:10px 14px; border:1px solid rgba(255,255,255,.24); background:rgba(32,7,49,.38); backdrop-filter:blur(8px); border-radius:999px; font:500 11px 'DM Mono',monospace; letter-spacing:.1em; }
+    .dot { width:7px; height:7px; border-radius:50%; background:var(--pink); box-shadow:0 0 14px var(--pink); }
+    h1,h2 { font-family:'Playfair Display',serif; font-weight:500; margin:0; letter-spacing:-.055em; }
+    h1 { max-width:860px; margin:26px 0 22px; font-size:clamp(56px,10vw,142px); line-height:.86; }
+    h1 em { color:var(--pink); font-weight:500; }
+    .lead { max-width:430px; margin:0; color:#e4d8ea; line-height:1.75; font-size:15px; }
+    .button { appearance:none; border:0; color:#21102b; background:linear-gradient(135deg,#ffeb90,#ff8cc9); border-radius:999px; padding:15px 22px; font:700 12px 'Plus Jakarta Sans',sans-serif; cursor:pointer; box-shadow:0 12px 30px rgba(255,105,181,.28); transition:.25s transform,.25s box-shadow; }
+    .button:hover { transform:translateY(-3px) rotate(-1deg); box-shadow:0 18px 35px rgba(255,105,181,.4); }
+    .intro-cta { margin-top:34px; }
+    .scroll { position:absolute; bottom:28px; font:10px 'DM Mono',monospace; letter-spacing:.15em; opacity:.7; animation:bob 2s ease-in-out infinite; }
+    @keyframes bob { 50% { transform:translateY(7px); } }
+    .spark { position:absolute; width:6px; height:6px; background:#fff2b5; border-radius:50%; box-shadow:0 0 14px #fff0af; animation:twinkle 2.8s infinite alternate; }
+    @keyframes twinkle { to { opacity:.2; transform:scale(.3); } }
+    #wish { min-height:75svh; max-width:1000px; margin:auto; align-items:flex-start; }
+    h2 { max-width:850px; font-size:clamp(44px,7vw,95px); line-height:.95; }
+    h2 em { color:var(--gold); }
+    .copy { margin:32px 0 0; max-width:600px; color:#e0d3e7; line-height:1.9; font-size:16px; }
+    .copy b { color:#fff; }
+    .ticker { position:relative; overflow:hidden; white-space:nowrap; color:rgba(255,255,255,.5); border-block:1px solid rgba(255,255,255,.16); padding:16px 0; font:500 12px 'DM Mono',monospace; letter-spacing:.12em; }
+    .ticker span { display:inline-block; padding-left:100%; animation:marquee 23s linear infinite; } @keyframes marquee { to { transform:translateX(-100%); } }
+    #reasons { padding-top:90px; padding-bottom:90px; }
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:1060px; width:100%; }
+    .card { min-height:230px; padding:22px; border-radius:20px; position:relative; overflow:hidden; background:rgba(255,255,255,.075); border:1px solid rgba(255,255,255,.14); box-shadow:inset 0 1px rgba(255,255,255,.1); transform:rotate(var(--r)); transition:.35s transform,.35s background; }
+    .card:hover { transform:rotate(0) translateY(-7px); background:rgba(255,255,255,.12); }
+    .num { display:block; font:11px 'DM Mono',monospace; color:#ffc9e4; } .card h3 { position:absolute; bottom:19px; margin:0; max-width:90%; font:600 clamp(19px,2.2vw,28px)/1.15 'Playfair Display',serif; letter-spacing:-.04em; } .shape { position:absolute; right:-24px; top:25px; opacity:.75; font-size:90px; transform:rotate(18deg); }
+    .music { max-width:920px; margin:auto; min-height:75svh; align-items:center; text-align:center; }
+    .record { height:138px; width:138px; display:grid; place-items:center; border-radius:50%; margin:0 auto 28px; background:repeating-radial-gradient(circle,#1a1223 0 4px,#442258 5px 6px); box-shadow:0 0 0 10px rgba(255,255,255,.06),0 0 60px rgba(255,89,184,.35); }
+    .record::after { content:'Y ♥ T'; display:grid; place-items:center; width:42px; height:42px; color:#3c1439; background:#ffc5df; border-radius:50%; font:700 8px 'DM Mono',monospace; }
+    .record.playing { animation:spin 3s linear infinite; } @keyframes spin { to { transform:rotate(360deg); } }
+    .music h2 { font-size:clamp(43px,6.5vw,85px); max-width:700px; }
+    .music p { color:#ddcfdf; max-width:490px; line-height:1.75; }
+    .player { margin-top:20px; display:flex; justify-content:center; gap:10px; }
+    .note { margin-top:16px; color:rgba(255,255,255,.5); font-size:11px; }
+    #final { text-align:center; align-items:center; min-height:90svh; }
+    #final h2 { font-size:clamp(56px,10vw,135px); } .sign { margin-top:27px; color:#f7c6df; font:italic 26px 'Playfair Display',serif; }
+    .confetti { position:fixed; top:-10px; width:9px; height:14px; z-index:10; pointer-events:none; animation:fall 3.8s linear forwards; } @keyframes fall { to { transform:translate(var(--x),110vh) rotate(720deg); opacity:0; } }
+    @media (max-width:680px) { .cards { grid-template-columns:1fr; } .card { min-height:155px; } .scene { padding-inline:24px; } }
+  </style>
+</head>
+<body>
+  <div class="aurora a1"></div><div class="aurora a2"></div><div class="aurora a3"></div>
+  <main>
+    <section class="scene" id="intro">
+      <span class="spark" style="left:18%;top:24%"></span><span class="spark" style="left:76%;top:22%;animation-delay:-1s"></span><span class="spark" style="left:88%;top:65%;animation-delay:-2s"></span>
+      <div class="date-chip"><i class="dot"></i> 03 NOVEMBER · TAPASYA'S DAY</div>
+      <h1>A little universe<br>made <em>for you.</em></h1>
+      <p class="lead">One beautiful human. One very special birthday. One small corner of the internet made with a lot of love.</p>
+      <a class="button intro-cta" href="#wish">Open your birthday surprise →</a>
+      <span class="scroll">SCROLL TO UNWRAP</span>
+    </section>
+    <div class="ticker"><span>HAPPY BIRTHDAY TAPASYA ✦ YOU MAKE ORDINARY DAYS FEEL LIKE A SCENE FROM A FILM ✦ HAPPY BIRTHDAY TAPASYA ✦ </span></div>
+    <section class="scene" id="wish">
+      <p class="eyebrow">A note from Yuvraj</p>
+      <h2>Dear <em>Tapasya,</em><br>today, the world gets to celebrate you.</h2>
+      <p class="copy">You bring a kind of magic that is impossible to explain properly — bright, unexpected, and completely your own. I hope this year gives you back every bit of happiness, peace, and wonder that you give to everyone around you. <b>Keep being gloriously you.</b></p>
+    </section>
+    <section class="scene" id="reasons">
+      <p class="eyebrow">Three things I hope you never forget</p>
+      <div class="cards">
+        <article class="card" style="--r:-2deg"><span class="num">01 / 03</span><span class="shape">✦</span><h3>Your smile has its own kind of sunshine.</h3></article>
+        <article class="card" style="--r:2deg"><span class="num">02 / 03</span><span class="shape">♥</span><h3>You make life feel lighter, louder, and better.</h3></article>
+        <article class="card" style="--r:-1deg"><span class="num">03 / 03</span><span class="shape">☻</span><h3>You deserve a year as lovely as your heart.</h3></article>
+      </div>
+    </section>
+    <section class="scene music">
+      <div class="record" id="record"></div>
+      <p class="eyebrow">Press play for the mood</p>
+      <h2>Our little <em>soundtrack.</em></h2>
+      <p>“Main Haareya” — because some songs just know how to say the soft things.</p>
+      <div class="player"><button class="button" id="playButton">♫ Play our song</button></div>
+      <p class="note" id="songNote">Add your own licensed audio file as <code>main-haareya.mp3</code> beside this page to enable playback.</p>
+      <audio id="song" src="main-haareya.mp3"></audio>
+    </section>
+    <section class="scene" id="final">
+      <p class="eyebrow">THE END — OR JUST THE BEGINNING</p>
+      <h2>Happy birthday,<br><em>Tapasya.</em></h2>
+      <p class="sign">— with love, Yuvraj</p>
+      <button class="button" id="celebrate">One last surprise ✦</button>
+    </section>
+  </main>
+  <script>
+    const song = document.getElementById('song'), record = document.getElementById('record'), play = document.getElementById('playButton'), note = document.getElementById('songNote');
+    play.addEventListener('click', async () => { try { if(song.paused) { await song.play(); play.textContent='❚❚ Pause our song'; record.classList.add('playing'); note.textContent='Playing “Main Haareya” ✦'; } else { song.pause(); play.textContent='♫ Play our song'; record.classList.remove('playing'); } } catch { note.textContent='Place your personal audio file “main-haareya.mp3” in this same folder, then try again.'; } });
+    song.addEventListener('ended',()=>{ play.textContent='♫ Play our song'; record.classList.remove('playing'); });
+    document.getElementById('celebrate').addEventListener('click', () => { const colors=['#ff80c5','#ffd379','#a98aff','#9ff3d2','#fff']; for(let i=0;i<130;i++){ const e=document.createElement('i'); e.className='confetti'; e.style.left=Math.random()*100+'vw'; e.style.background=colors[i%colors.length]; e.style.setProperty('--x',(Math.random()*260-130)+'px'); e.style.animationDelay=(Math.random()*.7)+'s'; document.body.append(e); setTimeout(()=>e.remove(),5000); } });
+  </script>
+</body>
+</html>
